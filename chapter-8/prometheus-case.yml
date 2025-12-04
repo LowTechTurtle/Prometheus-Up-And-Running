@@ -1,0 +1,10 @@
+- job_name: ionos
+  ionos_sd_configs:
+    - basic_auth:
+      username: john.doe@example.com
+      password: <secret>
+    datacenter_id: 57375146-e890-4b84-8d59-c045d3eb6f4c
+  relabel_configs:
+    - source_labels: [__meta_ionos_server_type]
+    target_label: server_type
+    action: lowercase
